@@ -24,7 +24,6 @@ it('Teste para POST', () => {
         expect(response.body.data).to.have.property('email').to.eq('teste@bednar.example');
         expect(response.body.data).to.have.property('gender').to.eq('female');
         expect(response.body.data).to.have.property('status').to.eq('active');
-        // Adicione mais verificações conforme necessário
     });
 });
 })
