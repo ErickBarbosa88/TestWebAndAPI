@@ -17,6 +17,14 @@ describe('Adicionar novo item no carrinho', () => {
       cy.get('#item_0_title_link > .inventory_item_name').then((element) => {
         expect(element).to.be.visible
       })
+
+      cy.get('[data-test="checkout"]').click()
+      cy.get('[data-test="firstName"]').type("Erick")
+      cy.get('[data-test="lastName"]').type("Barbosa")
+      cy.get('[data-test="postalCode"]').type("50731270")
+      cy.get('[data-test="continue"]').click()
+      cy.get('[data-test="finish"]').click()
+      cy.get('.complete-header').should('have.text', 'Thank you for your order!')
       });
     })
 
